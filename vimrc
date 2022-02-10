@@ -185,11 +185,15 @@ let g:ycm_auto_hover = ''
 set completeopt-=preview
 nnoremap <buffer> <silent> <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " ------------------------------------------------------------------------------------------------
-" UtilSnipts:
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+" UltiSnips
+" ------------------------------------------------------------------------------------------------
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsExpandTrigger="<CR>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsEditSplit="horizontal"
 " ------------------------------------------------------------------------------------------------
 " vim-solarized8
 " ------------------------------------------------------------------------------------------------
@@ -233,13 +237,3 @@ nnoremap <C-p> :<C-u>Files<CR>
 " fzf.vim
 " ------------------------------------------------------------------------------------------------
 let $FZF_DEFAULT_OPTS = "--reverse --preview='bat --color=always --style=numbers {}' --bind ctrl-p:preview-page-up,ctrl-n:preview-page-down"
-" ------------------------------------------------------------------------------------------------
-" UltiSnips
-" ------------------------------------------------------------------------------------------------
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
-let g:UltiSnipsUsePythonVersion = 3
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="horizontal"
