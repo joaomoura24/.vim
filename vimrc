@@ -63,6 +63,7 @@ function! PackInit() abort
     call minpac#add('radenling/vim-dispatch-neovim')
     " for adding Snippets
     call minpac#add('sirver/ultisnips')
+    call minpac#add('othree/xml.vim')
     " ------------------------------------------------------------------------------------------------
 endfunction
 " Define user commands for updating/cleaning the plugins.
@@ -128,9 +129,13 @@ syntax on
 set spell spelllang=en_gb
 " ------------------------------------------------------------------------------------------------
 " auto tab after moving line
+" set nocompatible
 filetype plugin indent on
-set tabstop=2 shiftwidth=2 softtabstop=2
-set expandtab
+" set autoindent
+" set smartindent
+" set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype xml setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype python setlocal ts=2 sw=2 sts=2 expandtab
 " ------------------------------------------------------------------------------------------------
 " Set tabs ans eol's visible"
 set list
@@ -184,14 +189,19 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_auto_hover = ''
 set completeopt-=preview
 nnoremap <buffer> <silent> <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
+let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+let g:ycm_complete_in_comments = 1 " Completion in comments
+let g:ycm_complete_in_strings = 1 " Completion in string
 " ------------------------------------------------------------------------------------------------
 " UltiSnips
 " ------------------------------------------------------------------------------------------------
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 let g:UltiSnipsUsePythonVersion = 3
-let g:UltiSnipsExpandTrigger="<CR>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="horizontal"
 " ------------------------------------------------------------------------------------------------

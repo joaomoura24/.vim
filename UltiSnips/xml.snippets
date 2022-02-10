@@ -14,3 +14,9 @@ endsnippet
 snippet tagi "Inline tag" b
 <${1:tag}>${2:${VISUAL}}</${1/([\w:._-]+).*/$1/}>
 endsnippet
+
+# ROS2 specific
+
+snippet depend "Add depend tag" b
+<depend>${1:${VISUAL}}</depend>
+endsnippet
