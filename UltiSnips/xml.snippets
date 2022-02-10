@@ -5,12 +5,12 @@ snippet xml "XML declaration" b
 
 endsnippet
 
-snippet t "Simple tag" b
+snippet tag "Simple tag" b
 <${1:tag}>
 	${2:${VISUAL}}
 </${1/([\w:._-]+).*/$1/}>
 endsnippet
 
-snippet ti "Inline tag" b
+snippet tagi "Inline tag" b
 <${1:tag}>${2:${VISUAL}}</${1/([\w:._-]+).*/$1/}>
 endsnippet
