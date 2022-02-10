@@ -61,6 +61,8 @@ function! PackInit() abort
     call minpac#add('tpope/vim-dispatch')
     " for asynchronous tools for neovim
     call minpac#add('radenling/vim-dispatch-neovim')
+    " for adding Snippets
+    call minpac#add('sirver/ultisnips')
     " ------------------------------------------------------------------------------------------------
 endfunction
 " Define user commands for updating/cleaning the plugins.
@@ -232,3 +234,12 @@ nnoremap <C-p> :<C-u>Files<CR>
 " ------------------------------------------------------------------------------------------------
 let $FZF_DEFAULT_OPTS = "--reverse --preview='bat --color=always --style=numbers {}' --bind ctrl-p:preview-page-up,ctrl-n:preview-page-down"
 " ------------------------------------------------------------------------------------------------
+" UltiSnips
+" ------------------------------------------------------------------------------------------------
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="horizontal"
