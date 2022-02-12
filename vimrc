@@ -63,7 +63,6 @@ function! PackInit() abort
     call minpac#add('radenling/vim-dispatch-neovim')
     " for adding Snippets
     call minpac#add('sirver/ultisnips')
-    call minpac#add('othree/xml.vim')
     " ------------------------------------------------------------------------------------------------
 endfunction
 " Define user commands for updating/cleaning the plugins.
@@ -199,9 +198,9 @@ let g:ycm_complete_in_strings = 1 " Completion in string
 " ------------------------------------------------------------------------------------------------
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 let g:UltiSnipsUsePythonVersion = 3
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsExpandTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="horizontal"
 " ------------------------------------------------------------------------------------------------
