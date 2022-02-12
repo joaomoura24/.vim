@@ -28,7 +28,7 @@ function! PackInit() abort
     " Auto complete with tab (replace C-n)
     call minpac#add('ervandew/supertab')
     " Syntax for programming languages (e.g. C++, python)
-    call minpac#add('vim-syntastic/syntastic')
+    " call minpac#add('vim-syntastic/syntastic')
     " File system explorer
     call minpac#add('preservim/nerdtree')
     " Showing git status in nerdree
@@ -63,6 +63,8 @@ function! PackInit() abort
     call minpac#add('radenling/vim-dispatch-neovim')
     " for adding Snippets
     call minpac#add('sirver/ultisnips')
+    " asynchronous  linting tool
+    call minpac#add('dense-analysis/ale')
     " ------------------------------------------------------------------------------------------------
 endfunction
 " Define user commands for updating/cleaning the plugins.
@@ -246,3 +248,21 @@ nnoremap <C-p> :<C-u>Files<CR>
 " fzf.vim
 " ------------------------------------------------------------------------------------------------
 let $FZF_DEFAULT_OPTS = "--reverse --preview='bat --color=always --style=numbers {}' --bind ctrl-p:preview-page-up,ctrl-n:preview-page-down"
+" ------------------------------------------------------------------------------------------------
+" ale
+" ------------------------------------------------------------------------------------------------
+" For JavaScript files, use `eslint` (and only eslint)
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'python': ['pylint'],
+\}
+" Mappings in the style of unimpaired-next
+nmap <silent> [W <Plug>(ale_first)
+nmap <silent> [w <Plug>(ale_previous)
+nmap <silent> ]w <Plug>(ale_next)
+nmap <silent> ]W <Plug>(ale_last)
+" run ale only when a buffer is saved
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_save = 1 " default
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_filetype_changed = 0
