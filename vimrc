@@ -134,9 +134,9 @@ set spell spelllang=en_gb
 filetype plugin indent on
 " set autoindent
 " set smartindent
-" set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype xml setlocal ts=2 sw=2 sts=2 expandtab
-autocmd Filetype python setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype python setlocal ts=4 sw=4 sts=4 expandtab
 " ------------------------------------------------------------------------------------------------
 " Set tabs ans eol's visible"
 set list
