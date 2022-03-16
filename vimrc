@@ -42,7 +42,7 @@ function! PackInit() abort
     " Grammatical corrections
     call minpac#add('rhysd/vim-grammarous')
     " Use * to search in visual mode
-    call minpac#add('nelstrom/vim-visual-star-search')
+    " call minpac#add('nelstrom/vim-visual-star-search')
     " Search with ack
     call minpac#add('mileszs/ack.vim')
     " mapping for vim
@@ -65,6 +65,8 @@ function! PackInit() abort
     call minpac#add('sirver/ultisnips')
     " asynchronous  linting tool
     call minpac#add('dense-analysis/ale')
+    " ros
+    call minpac#add('taketwo/vim-ros')
     " ------------------------------------------------------------------------------------------------
 endfunction
 " Define user commands for updating/cleaning the plugins.
@@ -76,8 +78,8 @@ command! PackStatus packadd minpac | call minpac#status()
 
 " ------------------------------------------------------------------------------------------------
 " Open and Source .vimrc
-nnoremap <leader>ev :tabnew ~/.vimrc<cr>
-nnoremap <leader>sv :source ~/.vimrc<cr>
+nnoremap <leader>ev :tabnew ~/.vim/vimrc<cr>
+nnoremap <leader>sv :source ~/.vim/vimrc<cr>
 " ------------------------------------------------------------------------------------------------
 "  Some general configurations
 "  Install matchit plugin that extends the use of % to words
